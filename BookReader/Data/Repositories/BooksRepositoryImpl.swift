@@ -7,17 +7,22 @@
 
 import Combine
 import Foundation
+import Factory
 
 class BooksRepositoryImpl: BooksRepository {
-    func getBooks() -> AnyPublisher<[Book], any Error> {
+    @Injected(\.remoteAPI) private var remoteAPI
+    
+    func getBooks() -> AnyPublisher<[Book], Error> {
+        return remoteAPI.getBooks()
+            .map { $0.map { $0.toDomain(isFavorite: false) } }
+            .eraseToAnyPublisher()
+    }
+
+    func searchBooks(query: String) -> AnyPublisher<[Book], Error> {
         return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
     }
 
-    func searchBooks(query: String) -> AnyPublisher<[Book], any Error> {
-        return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
-    }
-
-    func getBook(by id: String) -> AnyPublisher<Book, any Error> {
+    func getBook(by id: String) -> AnyPublisher<Book, Error> {
         return Just(
             Book(
                 id: "",
@@ -30,11 +35,11 @@ class BooksRepositoryImpl: BooksRepository {
         ).setFailureType(to: Error.self).eraseToAnyPublisher()
     }
 
-    func updateBook(_ book: Book) -> AnyPublisher<Void, any Error> {
+    func updateBook(_ book: Book) -> AnyPublisher<Void, Error> {
         return Just(Void()).setFailureType(to: Error.self).eraseToAnyPublisher()
     }
 
-    func getFavoriteBooks() -> AnyPublisher<[Book], any Error> {
+    func getFavoriteBooks() -> AnyPublisher<[Book], Error> {
         return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
     }
 }

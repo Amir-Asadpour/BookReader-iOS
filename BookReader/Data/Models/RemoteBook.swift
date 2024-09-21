@@ -12,3 +12,16 @@ struct RemoteBook: Codable {
     let description: String
     let image: String
 }
+
+extension RemoteBook {
+    func toDomain(isFavorite: Bool) -> Book {
+        .init(
+            id: id,
+            title: title,
+            author: author,
+            description: description,
+            isFavorite: isFavorite,
+            image: image.percentEncodedURL
+        )
+    }
+}
