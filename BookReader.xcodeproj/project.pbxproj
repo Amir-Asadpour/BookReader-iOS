@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		03674D012C9ECD5A00C48B0F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 03674D002C9ECD5A00C48B0F /* Alamofire */; };
+		03674D032C9ECD5F00C48B0F /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 03674D022C9ECD5F00C48B0F /* Factory */; };
+		03674D052C9ECD6100C48B0F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 03674D042C9ECD6100C48B0F /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		03674CD82C9EC7C000C48B0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -35,16 +41,6 @@
 			path = BookReader;
 			sourceTree = "<group>";
 		};
-		03674CDA2C9EC7C000C48B0F /* BookReaderTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BookReaderTests;
-			sourceTree = "<group>";
-		};
-		03674CE42C9EC7C000C48B0F /* BookReaderUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BookReaderUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03674D052C9ECD6100C48B0F /* Kingfisher in Frameworks */,
+				03674D012C9ECD5A00C48B0F /* Alamofire in Frameworks */,
+				03674D032C9ECD5F00C48B0F /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				03674CC92C9EC7BE00C48B0F /* BookReader */,
-				03674CDA2C9EC7C000C48B0F /* BookReaderTests */,
-				03674CE42C9EC7C000C48B0F /* BookReaderUITests */,
+				03674CFF2C9ECD5A00C48B0F /* Frameworks */,
 				03674CC82C9EC7BE00C48B0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +88,13 @@
 				03674CE12C9EC7C000C48B0F /* BookReaderUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		03674CFF2C9ECD5A00C48B0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +117,9 @@
 			);
 			name = BookReader;
 			packageProductDependencies = (
+				03674D002C9ECD5A00C48B0F /* Alamofire */,
+				03674D022C9ECD5F00C48B0F /* Factory */,
+				03674D042C9ECD6100C48B0F /* Kingfisher */,
 			);
 			productName = BookReader;
 			productReference = 03674CC72C9EC7BE00C48B0F /* BookReader.app */;
@@ -129,9 +137,6 @@
 			);
 			dependencies = (
 				03674CD92C9EC7C000C48B0F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				03674CDA2C9EC7C000C48B0F /* BookReaderTests */,
 			);
 			name = BookReaderTests;
 			packageProductDependencies = (
@@ -152,9 +157,6 @@
 			);
 			dependencies = (
 				03674CE32C9EC7C000C48B0F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				03674CE42C9EC7C000C48B0F /* BookReaderUITests */,
 			);
 			name = BookReaderUITests;
 			packageProductDependencies = (
@@ -195,6 +197,11 @@
 			);
 			mainGroup = 03674CBE2C9EC7BE00C48B0F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				03674CF92C9ECB6800C48B0F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				03674CFA2C9ECCC700C48B0F /* XCRemoteSwiftPackageReference "Factory" */,
+				03674CFB2C9ECD0400C48B0F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 03674CC82C9EC7BE00C48B0F /* Products */;
 			projectDirPath = "";
@@ -395,7 +402,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BookReader/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -403,6 +410,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,7 +431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BookReader/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -431,6 +439,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,6 +561,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03674CF92C9ECB6800C48B0F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		03674CFA2C9ECCC700C48B0F /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+		03674CFB2C9ECD0400C48B0F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03674D002C9ECD5A00C48B0F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03674CF92C9ECB6800C48B0F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		03674D022C9ECD5F00C48B0F /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03674CFA2C9ECCC700C48B0F /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		03674D042C9ECD6100C48B0F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03674CFB2C9ECD0400C48B0F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 03674CBF2C9EC7BE00C48B0F /* Project object */;
 }
