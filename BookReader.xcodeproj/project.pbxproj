@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03674D012C9ECD5A00C48B0F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 03674D002C9ECD5A00C48B0F /* Alamofire */; };
 		03674D032C9ECD5F00C48B0F /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 03674D022C9ECD5F00C48B0F /* Factory */; };
 		03674D052C9ECD6100C48B0F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 03674D042C9ECD6100C48B0F /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03674D052C9ECD6100C48B0F /* Kingfisher in Frameworks */,
-				03674D012C9ECD5A00C48B0F /* Alamofire in Frameworks */,
 				03674D032C9ECD5F00C48B0F /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,7 +115,6 @@
 			);
 			name = BookReader;
 			packageProductDependencies = (
-				03674D002C9ECD5A00C48B0F /* Alamofire */,
 				03674D022C9ECD5F00C48B0F /* Factory */,
 				03674D042C9ECD6100C48B0F /* Kingfisher */,
 			);
@@ -198,7 +195,6 @@
 			mainGroup = 03674CBE2C9EC7BE00C48B0F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				03674CF92C9ECB6800C48B0F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				03674CFA2C9ECCC700C48B0F /* XCRemoteSwiftPackageReference "Factory" */,
 				03674CFB2C9ECD0400C48B0F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
@@ -565,14 +561,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		03674CF92C9ECB6800C48B0F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 		03674CFA2C9ECCC700C48B0F /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory";
@@ -592,11 +580,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		03674D002C9ECD5A00C48B0F /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 03674CF92C9ECB6800C48B0F /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		03674D022C9ECD5F00C48B0F /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 03674CFA2C9ECCC700C48B0F /* XCRemoteSwiftPackageReference "Factory" */;
