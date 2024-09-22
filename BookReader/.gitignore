@@ -1,0 +1,24 @@
+## User settings
+xcuserdata/
+
+/BookReader.xcodeproj/xcuserdata/
+/BookReader.xcodeproj/project.xcworkspace/xcuserdata/
+/BookReader.xcodeproj/project.xcworkspace/xcshareddata/!(swiftpm/Package.resolved)
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+
+## Obj-C/Swift specific
+*.hmap
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+.build/
+
+*.DS_Store
+Pods
