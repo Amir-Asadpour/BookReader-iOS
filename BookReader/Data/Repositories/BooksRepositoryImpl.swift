@@ -17,9 +17,9 @@ class BooksRepositoryImpl: BooksRepository {
         return remoteAPI.getBooks()
             .combineLatest(localDataSource.getBooks())
             .flatMap { [weak self] remoteBooks, localBooks -> AnyPublisher<[Book], Error> in
-                let localBooksId = localBooks.map { $0.id }
+                let favoriteBooksId = localBooks.filter { $0.isFavorite }.map { $0.id }
                 
-                let books = remoteBooks.map { $0.toDomain(isFavorite: localBooksId.contains($0.id)) }
+                let books = remoteBooks.map { $0.toDomain(isFavorite: favoriteBooksId.contains($0.id)) }
                 
                 guard let self = self else {
                     return Just(books).setFailureType(to: Error.self).eraseToAnyPublisher()

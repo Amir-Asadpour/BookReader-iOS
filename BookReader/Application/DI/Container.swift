@@ -19,7 +19,7 @@ extension Container {
     }
     
     var booksLocalDataSource: Factory<BooksLocalDataSource> {
-        self { MockBooksLocalDataSource() }
+        self { CoreDataBooksLocalDataSource() }
             .singleton
     }
     
