@@ -32,10 +32,6 @@ class BooksRepositoryImpl: BooksRepository {
             .eraseToAnyPublisher()
     }
 
-    func searchBooks(query: String) -> AnyPublisher<[Book], Error> {
-        return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
-    }
-
     func getBook(by id: String) -> AnyPublisher<Book, Error> {
         return localDataSource.getBook(with: id)
     }

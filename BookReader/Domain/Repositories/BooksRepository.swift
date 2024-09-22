@@ -10,8 +10,6 @@ import Combine
 protocol BooksRepository {
     func getBooks() -> AnyPublisher<[Book], Error>
     
-    func searchBooks(query: String) -> AnyPublisher<[Book], Error>
-    
     func getBook(by id: String) -> AnyPublisher<Book, Error>
     
     func updateBook(_ book: Book) -> AnyPublisher<Void, Error>
