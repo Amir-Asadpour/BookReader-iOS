@@ -17,4 +17,14 @@ extension Container {
         self { BooksRepositoryImpl() }
             .singleton
     }
+    
+    var booksLocalDataSource: Factory<BooksLocalDataSource> {
+        self { MockBooksLocalDataSource() }
+            .singleton
+    }
+    
+    var coreDataController: Factory<CoreDataController> {
+        self { CoreDataController() }
+            .singleton
+    }
 }
