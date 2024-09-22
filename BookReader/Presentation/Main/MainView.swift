@@ -17,7 +17,7 @@ struct MainView: View {
                         Label("home", systemImage: "house")
                     }
                 
-                Text("Favorites")
+                FavoritesScreen()
                     .tabItem {
                         Label("Favorites", systemImage: "star")
                     }

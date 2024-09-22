@@ -37,6 +37,17 @@
         }
       }
     },
+    "msg_empty_fav_books" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don’t have any favorite books yet!"
+          }
+        }
+      }
+    },
     "msg_general_error" : {
       "extractionState" : "manual",
       "localizations" : {
