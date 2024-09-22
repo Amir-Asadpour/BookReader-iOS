@@ -9,18 +9,23 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var navigationPath = NavigationPath()
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             TabView {
-                HomeScreen()
+                HomeScreen(navigationPath: $navigationPath)
                     .tabItem {
                         Label("home", systemImage: "house")
                     }
                 
-                FavoritesScreen()
+                FavoritesScreen(navigationPath: $navigationPath)
                     .tabItem {
-                        Label("Favorites", systemImage: "star")
+                        Label("favorites", systemImage: "star")
                     }
+            }
+            .navigationDestination(for: String.self) { bookId in
+                BookDetailScreen(bookId: bookId)
             }
         }
     }

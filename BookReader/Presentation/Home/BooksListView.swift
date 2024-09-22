@@ -10,13 +10,17 @@ import Kingfisher
 
 struct BooksListView: View {
     let books: [Book]
+    let onBookTapped: (Book) -> Void
     
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 16) {
                 ForEach(books, id: \.id) { book in
-                    BookItemView(book: book)
-                        .padding(.horizontal)
+                    BookItemView(
+                        book: book,
+                        onBookTapped: { onBookTapped(book) }
+                    )
+                    .padding(.horizontal)
                 }
             }
             .padding(.vertical)
@@ -25,5 +29,5 @@ struct BooksListView: View {
 }
 
 #Preview {
-    BooksListView(books: Mock.books)
+    BooksListView(books: Mock.books) { _ in }
 }

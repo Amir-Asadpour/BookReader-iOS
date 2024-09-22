@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeScreen: View {
     @StateObject var viewModel = HomeViewModel()
     
+    @Binding var navigationPath: NavigationPath
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -17,7 +19,9 @@ struct HomeScreen: View {
                 case .loading:
                     ProgressView()
                 case .loaded(let books):
-                    BooksListView(books: books)
+                    BooksListView(books: books) { book in
+                        navigationPath.append(book.id)
+                    }
                 case .error(_):
                     TryAgainView {
                         viewModel.getBooks()
@@ -25,6 +29,7 @@ struct HomeScreen: View {
                 }
             }
             .navigationTitle("all_books")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 viewModel.getBooks()
             }
@@ -33,5 +38,7 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen()
+    HomeScreen(
+        navigationPath: .constant(NavigationPath())
+    )
 }

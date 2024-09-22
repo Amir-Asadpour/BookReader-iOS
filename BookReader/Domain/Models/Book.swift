@@ -11,6 +11,6 @@ struct Book {
     let title: String
     let author: String
     let description: String
-    let isFavorite: Bool
+    var isFavorite: Bool
     let image: URL
 }

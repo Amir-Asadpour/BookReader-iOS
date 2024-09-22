@@ -10,6 +10,8 @@ struct FavoritesScreen: View {
         
     @StateObject private var viewModel = FavoritesViewModel()
     
+    @Binding var navigationPath: NavigationPath
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -22,7 +24,9 @@ struct FavoritesScreen: View {
                             .font(.body)
                             .padding(.horizontal)
                     } else {
-                        BooksListView(books: books)
+                        BooksListView(books: books) { book in
+                            navigationPath.append(book.id)
+                        }
                     }
                 case .error(_):
                     TryAgainView {
@@ -30,7 +34,7 @@ struct FavoritesScreen: View {
                     }
                 }
             }
-            .navigationTitle("")
+            .navigationTitle("fav_books")
             .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
@@ -40,5 +44,5 @@ struct FavoritesScreen: View {
 }
 
 #Preview {
-    FavoritesScreen()
+    FavoritesScreen(navigationPath: .constant(NavigationPath()))
 }

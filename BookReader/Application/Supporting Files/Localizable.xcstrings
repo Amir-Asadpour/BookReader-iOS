@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "add_to_favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add To Favorites"
+          }
+        }
+      }
+    },
     "all_books" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -12,22 +23,41 @@
         }
       }
     },
-    "Favorites" : {
-
-    },
-    "home" : {
+    "book_detail" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Home"
+            "value" : "Book Detail"
           }
         }
       }
     },
-    "Home" : {
-      "extractionState" : "stale",
+    "fav_books" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite Books"
+          }
+        }
+      }
+    },
+    "favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        }
+      }
+    },
+    "home" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -55,6 +85,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Something went wrong, Please try again"
+          }
+        }
+      }
+    },
+    "remove_from_fav" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove From Favorites"
           }
         }
       }

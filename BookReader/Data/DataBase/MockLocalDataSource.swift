@@ -38,7 +38,14 @@ class MockBooksLocalDataSource: BooksLocalDataSource {
     }
 
     func getBook(with id: String) -> AnyPublisher<Book, any Error> {
-        let book = books.first(where: { $0.id == id })!
+        let book = books.first(where: { $0.id == id }) ?? Book(
+            id: "1",
+            title: "iOS Development",
+            author: "Amir",
+            description: "Description",
+            isFavorite: false,
+            image: URL(string: "https://google.com")!
+        )
         return Just(book)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()

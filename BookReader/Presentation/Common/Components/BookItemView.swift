@@ -9,6 +9,7 @@ import Kingfisher
 
 struct BookItemView: View {
     let book: Book
+    let onBookTapped: () -> Void
     
     var body: some View {
         HStack(spacing: 24) {
@@ -30,9 +31,12 @@ struct BookItemView: View {
             
             Spacer()
         }
+        .onTapGesture {
+            onBookTapped()
+        }
     }
 }
 
 #Preview {
-    BookItemView(book: Mock.books[0])
+    BookItemView(book: Mock.books[0]) { }
 }
