@@ -89,6 +89,17 @@
         }
       }
     },
+    "no_books_found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No books found"
+          }
+        }
+      }
+    },
     "remove_from_fav" : {
       "extractionState" : "manual",
       "localizations" : {

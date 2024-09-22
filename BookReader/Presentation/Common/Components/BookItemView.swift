@@ -31,6 +31,7 @@ struct BookItemView: View {
             
             Spacer()
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             onBookTapped()
         }

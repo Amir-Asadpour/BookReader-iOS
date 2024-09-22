@@ -27,11 +27,17 @@ struct HomeScreen: View {
                             .padding(.horizontal)
                             .focused($searchIsFocused)
                         
-                        BooksListView(books: books) { book in
-                            navigationPath.append(book.id)
+                        if books.isEmpty {
+                            Text("no_books_found")
+                                .font(.body)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                        } else {
+                            BooksListView(books: books) { book in
+                                navigationPath.append(book.id)
+                            }
                         }
-                        .animation(.spring, value: books)
                     }
+                    .animation(.spring, value: books)
                 case .error(_):
                     TryAgainView {
                         viewModel.getBooks()
@@ -44,8 +50,16 @@ struct HomeScreen: View {
                 viewModel.getBooks()
             }
         }
-        .onTapGesture {
-            searchIsFocused = false
+        .overlay {
+            if searchIsFocused {
+                ZStack { }
+                    .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.01))
+                    .onTapGesture {
+                        searchIsFocused = false
+                    }
+            }
         }
     }
 }
