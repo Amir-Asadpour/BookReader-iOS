@@ -100,6 +100,17 @@
         }
       }
     },
+    "search_hint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search books by title or author"
+          }
+        }
+      }
+    },
     "try_again" : {
       "extractionState" : "manual",
       "localizations" : {

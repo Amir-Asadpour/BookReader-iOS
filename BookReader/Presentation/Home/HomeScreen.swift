@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @FocusState private var searchIsFocused: Bool
+    
     @StateObject var viewModel = HomeViewModel()
     
     @Binding var navigationPath: NavigationPath
@@ -19,8 +21,16 @@ struct HomeScreen: View {
                 case .loading:
                     ProgressView()
                 case .loaded(let books):
-                    BooksListView(books: books) { book in
-                        navigationPath.append(book.id)
+                    VStack {
+                        TextField("search_hint", text: $viewModel.query)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal)
+                            .focused($searchIsFocused)
+                        
+                        BooksListView(books: books) { book in
+                            navigationPath.append(book.id)
+                        }
+                        .animation(.spring, value: books)
                     }
                 case .error(_):
                     TryAgainView {
@@ -33,6 +43,9 @@ struct HomeScreen: View {
             .onAppear {
                 viewModel.getBooks()
             }
+        }
+        .onTapGesture {
+            searchIsFocused = false
         }
     }
 }
